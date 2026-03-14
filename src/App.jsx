@@ -3,6 +3,7 @@ import './App.css'
 import ToDo from './Todo';
 import Actor from './actors';
 import Singing from './sing';
+import Counter from './count';
 
 
 
@@ -30,6 +31,7 @@ function App() {
       alert(newNum);
 
    }
+   
 
   return (
     <>
@@ -70,6 +72,10 @@ function App() {
        <button onClick={() => handleClickadd5 (10) } >Click me  add 5+ = </button>
 
      }
+
+    {/* Count ++  */}
+
+     <Counter ></Counter>
 
     
     </>
