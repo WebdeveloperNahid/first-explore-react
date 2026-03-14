@@ -42,7 +42,7 @@
 }
 
 
-.student {
+.student, .singer {
   color: aqua;
   border: goldenrod;
   border-color: green;

@@ -2,6 +2,7 @@
 import './App.css'
 import ToDo from './Todo';
 import Actor from './actors';
+import Singing from './sing';
 
 
 
@@ -9,6 +10,26 @@ import Actor from './actors';
 function App() {
 
    const actors = ["salman sha","Riyaz","Fredoj","Amin khan","Sakib khan"];
+   const singers = [
+    {id: 1 , name : "Dr . Mafuz", age : 68},
+    {id: 2 , naem : "Tasan", age :45},
+    {id:3 , name : "Shuvro Deb", age: 57}
+   ]
+
+  // butoon handleing arrow Funciton 
+   const handelClick = () => {
+    alert("button clicked.Done")
+
+    
+    }
+
+    // button function er vitor add or maltiply ,division ,etc korar jonoo  arrow function er use case System
+
+    const handleClickadd5 = (num) =>{
+      const newNum = num + 5;
+      alert(newNum);
+
+   }
 
   return (
     <>
@@ -24,7 +45,7 @@ function App() {
       <ToDo task = "allreaddy Completed class" isDone = {true} ></ToDo>
       <ToDo task = "try to complet classes" isDone = {false} ></ToDo>
 
-      {/* Map() er User case */}
+      {/* Map() er User case with Array*/}
 
       <ul>
         {
@@ -34,7 +55,22 @@ function App() {
         }
       </ul>
 
-     
+      {/* object use case  */}
+
+      {
+        singers.map(singer => <Singing key = {singer.id} singer={singer} ></Singing> )
+      }
+      
+      {/* *****simple arrow function btn*** */}
+      <button onClick={handelClick} >click me!</button>
+
+      {/* btn arrow function but add, multiply,devi, biyog etc Ai system use korle Parameter hisebe patano jai & button click korar por Run hoi,, other wise direcly arrow function er modde parametter dile button er click korar agei Run hoye jai*/}
+
+     {
+       <button onClick={() => handleClickadd5 (10) } >Click me  add 5+ = </button>
+
+     }
+
     
     </>
   )
