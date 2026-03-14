@@ -1,7 +1,14 @@
 
 import './App.css'
+import ToDo from './Todo';
+import Actor from './actors';
+
+
+
 
 function App() {
+
+   const actors = ["salman sha","Riyaz","Fredoj","Amin khan","Sakib khan"];
 
   return (
     <>
@@ -10,6 +17,24 @@ function App() {
       <Player name = 'Sayed' runs = "444"  ></Player>
       <Player name = 'Jahid' runs = "554"  ></Player>
       <Webdeveloper name = "Omarfaruk" tech = "JavaScript" ></Webdeveloper>
+
+      <ToDo task = "Learn React" isDone = {true} ></ToDo>
+      <ToDo task = "Revise Js" isDone = {false}></ToDo>
+      <ToDo task = "Take a shower" isDone = {true} ></ToDo>
+      <ToDo task = "allreaddy Completed class" isDone = {true} ></ToDo>
+      <ToDo task = "try to complet classes" isDone = {false} ></ToDo>
+
+      {/* Map() er User case */}
+
+      <ul>
+        {
+          actors.map(actor => (
+            <Actor  actor={actor} ></Actor>
+          ))
+        }
+      </ul>
+
+     
     
     </>
   )
@@ -38,9 +63,6 @@ function Webdeveloper ({name, tech}) {
     </div>
   )
 }
-
-
-
 
 
 export default App
