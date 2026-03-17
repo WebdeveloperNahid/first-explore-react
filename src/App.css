@@ -53,3 +53,9 @@
   margin:50px;
 
 }
+
+.posts {
+  border: 2px solid goldenrod;
+  padding: 20px;
+  background-color: grey
+}

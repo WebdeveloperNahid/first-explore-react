@@ -4,11 +4,19 @@ import ToDo from './Todo';
 import Actor from './actors';
 import Singing from './sing';
 import Counter from './count';
+import Posts from './posts';
+import { Suspense } from 'react';
 
 
+//posts
 
+const fetchPosts = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  return res.json();
+}
 
 function App() {
+  const postPromise = fetchPosts()
 
    const actors = ["salman sha","Riyaz","Fredoj","Amin khan","Sakib khan"];
    const singers = [
@@ -31,11 +39,14 @@ function App() {
       alert(newNum);
 
    }
-   
+ 
 
   return (
     <>
       <h1>Vite + React</h1>
+      <Suspense fallback = { <h3> Post are Comming.....</h3>} >
+        <Posts postPromise = {postPromise} ></Posts>
+      </Suspense>
       <Player name = 'Nahid' runs = "500" ></Player>
       <Player name = 'Sayed' runs = "444"  ></Player>
       <Player name = 'Jahid' runs = "554"  ></Player>
